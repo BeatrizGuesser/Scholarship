@@ -3,7 +3,7 @@ package beatriz.guesser.scholarship.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name= "tb_instructor")
+@Table(name = "tb_instructor")
 public class Instructor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

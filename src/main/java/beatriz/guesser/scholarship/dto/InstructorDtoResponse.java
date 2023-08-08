@@ -2,11 +2,11 @@ package beatriz.guesser.scholarship.dto;
 
 public class InstructorDtoResponse {
     private Long id_instructor;
-    private String name_intructor;
+    private String name_instructor;
 
-    public InstructorDtoResponse(Long id_instructor, String name_intructor) {
+    public InstructorDtoResponse(Long id_instructor, String name_instructor) {
         this.id_instructor = id_instructor;
-        this.name_intructor = name_intructor;
+        this.name_instructor = name_instructor;
     }
 
     public Long getId_instructor() {
@@ -17,11 +17,11 @@ public class InstructorDtoResponse {
         this.id_instructor = id_instructor;
     }
 
-    public String getName_intructor() {
-        return name_intructor;
+    public String getName_instructor() {
+        return name_instructor;
     }
 
-    public void setName_intructor(String name_intructor) {
-        this.name_intructor = name_intructor;
+    public void setName_instructor(String name_instructor) {
+        this.name_instructor = name_instructor;
     }
 }

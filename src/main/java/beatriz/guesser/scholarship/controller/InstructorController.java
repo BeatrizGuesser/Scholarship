@@ -18,6 +18,6 @@ public class InstructorController {
     @PostMapping("/post")
     public String postInstructor(@RequestBody InstructorDtoRequest instructorDtoRequest) {
         instructorService.save(instructorDtoRequest);
-        return "Car successfully saved!";
+        return "Instructor successfully saved!";
     }
 }
