@@ -11,8 +11,7 @@ public class CoordinatorService {
     @Autowired
     private CoordinatorRepository coordinatorRepository;
     public void save(CoordinatorDtoRequest coordinatorDtoRequest){
-        Coordinator coordinator = new Coordinator(null,
-                coordinatorDtoRequest.getName_coordinator());
+        Coordinator coordinator = new Coordinator(null, coordinatorDtoRequest.getName_coordinator());
         coordinatorRepository.save(coordinator);
     }
 

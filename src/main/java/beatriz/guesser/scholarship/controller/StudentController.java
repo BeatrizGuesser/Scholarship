@@ -16,7 +16,7 @@ public class StudentController {
 
     @PostMapping("/post")
     public String postStudent(@RequestBody StudentDtoRequest studentDtoRequest) {
-        studentService.saveStudent(studentDtoRequest);
+        studentService.save(studentDtoRequest);
         return "Student successfully saved!";
     }
 
