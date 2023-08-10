@@ -2,6 +2,8 @@ package beatriz.guesser.scholarship.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "tb_coordinator")
 public class Coordinator {
@@ -33,4 +35,12 @@ public class Coordinator {
     public void setName_coordinator(String name_coordinator) {
         this.name_coordinator = name_coordinator;
     }
+
+//    public Classroom getClassroom() {
+//        return classroom;
+//    }
+//
+//    public void setClassroom(Classroom classroom) {
+//        this.classroom = classroom;
+//    }
 }

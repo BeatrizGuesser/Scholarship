@@ -2,6 +2,8 @@ package beatriz.guesser.scholarship.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "tb_instructor")
 public class Instructor {
@@ -9,6 +11,11 @@ public class Instructor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_instructor;
     private String name_instructor;
+    @ManyToMany
+    @JoinTable(name = "instructor_classroom",
+    joinColumns = @JoinColumn (name = "instructor_id_instructor"),
+    inverseJoinColumns = @JoinColumn(name = "classroom_id_class"))
+    private List<Classroom> classroom;
 
     public Instructor() {
     }

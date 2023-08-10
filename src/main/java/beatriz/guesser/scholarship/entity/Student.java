@@ -9,6 +9,9 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_student;
     private String name_student;
+    @ManyToOne
+    @JoinColumn(name = "squad_id_squad")
+    private Squad squad;
 
     public Student() {
     }
@@ -32,5 +35,13 @@ public class Student {
 
     public void setName_student(String name_student) {
         this.name_student = name_student;
+    }
+
+    public Squad getSquad() {
+        return squad;
+    }
+
+    public void setSquad(Squad squad) {
+        this.squad = squad;
     }
 }

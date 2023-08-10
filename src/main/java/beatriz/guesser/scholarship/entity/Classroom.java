@@ -11,8 +11,7 @@ public class Classroom {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_class;
     private String name_class;
-    //@Enumerated(EnumType.STRING)
-    private String status_class; // Enum: waiting, started, finished
+    private String status_class;
     @ManyToOne
     private Coordinator coordinator;
     @ManyToOne
@@ -25,7 +24,12 @@ public class Classroom {
     public Classroom() {
     }
 
-    public Classroom(Long id_class, String name_class, String status_class, Coordinator coordinator, ScrumMaster scrumMaster, List<Instructor> instructors, List<Student> students) {
+    public Classroom(Long id_class, String name_class, String status_class) {
+        this.id_class = id_class;
+        this.name_class = name_class;
+        this.status_class = status_class;
+    }
+        public Classroom(Long id_class, String name_class, String status_class, Coordinator coordinator, ScrumMaster scrumMaster, List<Instructor> instructors, List<Student> students) {
         this.id_class = id_class;
         this.name_class = name_class;
         this.status_class = status_class;
