@@ -1,6 +1,8 @@
 package beatriz.guesser.scholarship.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import org.hibernate.annotations.CollectionType;
 
 import java.util.List;
 
@@ -11,6 +13,9 @@ public class Coordinator {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_coordinator;
     private String name_coordinator;
+    @JsonIgnore
+    @OneToMany(mappedBy = "coordinator")
+    private List<Classroom> classroom;
 
     public Coordinator() {
     }
@@ -36,11 +41,16 @@ public class Coordinator {
         this.name_coordinator = name_coordinator;
     }
 
-//    public Classroom getClassroom() {
-//        return classroom;
-//    }
-//
-//    public void setClassroom(Classroom classroom) {
-//        this.classroom = classroom;
-//    }
+    public List<Classroom> getClassroom() {
+        return classroom;
+    }
+
+    public void setClassroom(List<Classroom> classroom) {
+        this.classroom = classroom;
+    }
+
+    public void addClassroom(Classroom classroom){
+        this.classroom.add(classroom);
+    }
+
 }

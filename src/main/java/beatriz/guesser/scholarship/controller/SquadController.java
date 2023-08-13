@@ -1,14 +1,17 @@
 package beatriz.guesser.scholarship.controller;
 
+import beatriz.guesser.scholarship.dto.ClassroomDtoResponse;
 import beatriz.guesser.scholarship.dto.SquadDtoRequest;
+import beatriz.guesser.scholarship.dto.SquadDtoResponse;
 import beatriz.guesser.scholarship.dto.StudentDtoRequest;
+import beatriz.guesser.scholarship.entity.Squad;
 import beatriz.guesser.scholarship.service.InstructorService;
 import beatriz.guesser.scholarship.service.SquadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(value = "/squads")
+@RequestMapping(value = "/v1/squads")
 public class SquadController {
     @Autowired
     private SquadService squadService;
@@ -18,8 +21,20 @@ public class SquadController {
         squadService.save(squadDtoRequest);
         return "Squad successfully saved!";
     }
-    @PutMapping(value = "/squads/{id_squad}/students/{id_student}")
-    public void addStudentToSquad(@PathVariable Long id_squad, @PathVariable Long id_student){
+    @PutMapping("/add/{id_squad}/students/{id_student}")
+    public String addStudentToSquad(@PathVariable Long id_squad, @PathVariable Long id_student){
         squadService.addStudentToSquad(id_squad, id_student);
+        return "Student successfully added to squad!";
+    }
+
+    @GetMapping("/get/{id_squad}")
+    public SquadDtoResponse getSquad(@PathVariable Long id_squad) {
+        return squadService.getById(id_squad);
+    }
+
+    @DeleteMapping("/delete/{id_squad}")
+    public String deleteSquad(@PathVariable Long id_squad) {
+        squadService.delete(id_squad);
+        return "Squad successfully deleted!";
     }
 }

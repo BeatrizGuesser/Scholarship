@@ -13,17 +13,27 @@ public class Classroom {
     private String name_class;
     private String status_class;
     @ManyToOne
+    @JoinColumn(name = "coordinator_id_coordinator")
     private Coordinator coordinator;
     @ManyToOne
+    @JoinColumn(name = "scrum_id_scrum")
     private ScrumMaster scrumMaster;
-    @ManyToMany(mappedBy = "")
+    @ManyToMany(mappedBy = "classroom")
     private List<Instructor> instructors;
-    @ManyToMany(mappedBy = "")
+    @OneToMany(mappedBy = "classroom")
     private List<Student> students;
+//    @OneToMany(mappedBy = "classroom")
+//    private List<Squad> squad;
 
     public Classroom() {
     }
 
+    public Classroom(Long id_class, Coordinator coordinator, ScrumMaster scrumMaster, List<Instructor> instructors) {
+        this.id_class = id_class;
+        this.coordinator = coordinator;
+        this.scrumMaster = scrumMaster;
+        this.instructors = instructors;
+    }
     public Classroom(Long id_class, String name_class, String status_class) {
         this.id_class = id_class;
         this.name_class = name_class;
@@ -37,6 +47,11 @@ public class Classroom {
         this.scrumMaster = scrumMaster;
         this.instructors = instructors;
         this.students = students;
+    }
+
+    public Classroom(String name_class) {
+        this.name_class = name_class;
+
     }
 
     public Long getId_class() {
@@ -94,4 +109,17 @@ public class Classroom {
     public void setStudents(List<Student> students) {
         this.students = students;
     }
+
+
+//    public List<Squad> getSquad() {
+//        return squad;
+//    }
+//
+//    public void setSquad(List<Squad> squad) {
+//        this.squad = squad;
+//    }
+
+
+
+
 }

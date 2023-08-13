@@ -1,5 +1,6 @@
 package beatriz.guesser.scholarship.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -11,6 +12,7 @@ public class Instructor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_instructor;
     private String name_instructor;
+    @JsonIgnore
     @ManyToMany
     @JoinTable(name = "instructor_classroom",
     joinColumns = @JoinColumn (name = "instructor_id_instructor"),
@@ -39,5 +41,13 @@ public class Instructor {
 
     public void setName_instructor(String name_instructor) {
         this.name_instructor = name_instructor;
+    }
+
+    public List<Classroom> getClassroom() {
+        return classroom;
+    }
+
+    public void setClassroom(List<Classroom> classroom) {
+        this.classroom = classroom;
     }
 }

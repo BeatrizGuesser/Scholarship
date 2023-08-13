@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/coordinators")
+@RequestMapping(value = "/v1/coordinators")
 public class CoordinatorController {
     @Autowired
     private CoordinatorService coordinatorService;

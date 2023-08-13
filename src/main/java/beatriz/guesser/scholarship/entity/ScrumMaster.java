@@ -1,6 +1,9 @@
 package beatriz.guesser.scholarship.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "tb_scrum")
@@ -9,6 +12,9 @@ public class ScrumMaster {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_scrum;
     private String name_scrum;
+    @JsonIgnore
+    @OneToMany(mappedBy = "scrumMaster")
+    private List<Classroom> classroom;
 
     public ScrumMaster() {
     }
@@ -32,5 +38,17 @@ public class ScrumMaster {
 
     public void setName_scrum(String name_scrum) {
         this.name_scrum = name_scrum;
+    }
+
+    public List<Classroom> getClassroom() {
+        return classroom;
+    }
+
+    public void setClassroom(List<Classroom> classroom) {
+        this.classroom = classroom;
+    }
+
+    public void addClassroom(Classroom classroom){
+        this.classroom.add(classroom);
     }
 }

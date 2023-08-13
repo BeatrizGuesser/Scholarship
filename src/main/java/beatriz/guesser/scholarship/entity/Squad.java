@@ -1,5 +1,6 @@
 package beatriz.guesser.scholarship.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -11,8 +12,12 @@ public class Squad {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_squad;
     private String name_squad;
+
     @OneToMany(mappedBy = "squad")
     private List<Student> students;
+    @ManyToOne
+    @JoinColumn(name = "classroom_id_class")
+    private Classroom classroom;
 
     public Squad() {
     }
@@ -49,5 +54,13 @@ public class Squad {
 
     public void setStudents(List<Student> students) {
         this.students = students;
+    }
+
+    public Classroom getClassroom() {
+        return classroom;
+    }
+
+    public void setClassroom(Classroom classroom) {
+        this.classroom = classroom;
     }
 }

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/scrum-masters")
+@RequestMapping("/v1/scrum-masters")
 public class ScrumMasterController  {
     @Autowired
     private ScrumMasterService scrumMasterService;

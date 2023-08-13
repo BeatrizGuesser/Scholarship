@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/students")
+@RequestMapping(value = "/v1/students")
 public class StudentController {
     @Autowired
-    StudentService studentService;
+    private StudentService studentService;
 
     @PostMapping("/post")
     public String postStudent(@RequestBody StudentDtoRequest studentDtoRequest) {
