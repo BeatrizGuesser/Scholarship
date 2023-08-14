@@ -93,6 +93,7 @@ public class ClassroomService {
             student.setClassroom(classroom);
             classroom.setStudents(List.of(student));
             studentRepository.save(student);
+
         }else {
             throw new RuntimeException("You can only register new students in the status WAITING");
         }
@@ -110,6 +111,7 @@ public class ClassroomService {
         instructor.addClassroom(classroom);
         classroom.setInstructors(List.of(instructor));
         instructorRepository.save(instructor);
+
     }
 
     public void startClass(Long id_class){
