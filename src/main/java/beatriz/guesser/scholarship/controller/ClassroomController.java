@@ -58,4 +58,26 @@ public class ClassroomController {
         return "Scrum Master successfully added to classroom!";
     }
 
+    @PutMapping("/add/{id_class}/students/{id_student}")
+    public String addStudentToClass(@PathVariable Long id_class, @PathVariable Long id_student){
+        classroomService.addStudentToClass(id_class, id_student);
+        return "Student successfully added to classroom!";
+    }
+
+    @PutMapping("/add/{id_class}/instructors/{id_instructor}")
+    public String addInstructorToClass(@PathVariable Long id_class, @PathVariable Long id_instructor){
+        classroomService.addInstructorToClass(id_class, id_instructor);
+        return "Instructor successfully added to classroom!";
+    }
+    @PutMapping("/start/{id_class}")
+    public String startClass(@PathVariable Long id_class){
+        classroomService.startClass(id_class);
+        return "Classroom started successfully!";
+    }
+
+    @PutMapping("/finish/{id_class}")
+    public String finishClass(@PathVariable Long id_class){
+        classroomService.finishClass(id_class);
+        return "Classroom finished successfully!";
+    }
 }

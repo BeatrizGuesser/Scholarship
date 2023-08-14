@@ -110,6 +110,10 @@ public class Classroom {
         this.students = students;
     }
 
+//    public void addClassroom(List classroom){
+//        this.classroom.add(classroom);
+//    }
+
 
 //    public List<Squad> getSquad() {
 //        return squad;

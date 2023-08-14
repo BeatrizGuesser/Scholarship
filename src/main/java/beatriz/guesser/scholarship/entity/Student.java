@@ -66,6 +66,12 @@ public class Student {
         this.classroom = classroom;
     }
 
+
+
+//    public void addClassroom(Classroom classroom){
+//        this.classroom.add(classroom);
+//    }
+
     @Override
     public String toString() {
         return "Student{" +

@@ -50,4 +50,7 @@ public class Instructor {
     public void setClassroom(List<Classroom> classroom) {
         this.classroom = classroom;
     }
+    public void addClassroom(Classroom classroom){
+        this.classroom.add(classroom);
+    }
 }
