@@ -1,6 +1,5 @@
 package beatriz.guesser.scholarship.dto;
 
-import beatriz.guesser.scholarship.entity.Classroom;
 import beatriz.guesser.scholarship.entity.Student;
 
 import java.util.List;

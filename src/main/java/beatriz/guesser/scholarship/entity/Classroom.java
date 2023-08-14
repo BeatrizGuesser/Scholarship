@@ -22,8 +22,6 @@ public class Classroom {
     private List<Instructor> instructors;
     @OneToMany(mappedBy = "classroom")
     private List<Student> students;
-//    @OneToMany(mappedBy = "classroom")
-//    private List<Squad> squad;
 
     public Classroom() {
     }
@@ -109,21 +107,5 @@ public class Classroom {
     public void setStudents(List<Student> students) {
         this.students = students;
     }
-
-//    public void addClassroom(List classroom){
-//        this.classroom.add(classroom);
-//    }
-
-
-//    public List<Squad> getSquad() {
-//        return squad;
-//    }
-//
-//    public void setSquad(List<Squad> squad) {
-//        this.squad = squad;
-//    }
-
-
-
 
 }

@@ -2,7 +2,6 @@ package beatriz.guesser.scholarship.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import org.hibernate.annotations.CollectionType;
 
 import java.util.List;
 

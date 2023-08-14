@@ -15,5 +15,4 @@ public class CoordinatorService {
         coordinatorRepository.save(coordinator);
     }
 
-
 }
