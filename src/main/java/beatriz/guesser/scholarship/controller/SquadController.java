@@ -1,11 +1,7 @@
 package beatriz.guesser.scholarship.controller;
 
-import beatriz.guesser.scholarship.dto.ClassroomDtoResponse;
 import beatriz.guesser.scholarship.dto.SquadDtoRequest;
 import beatriz.guesser.scholarship.dto.SquadDtoResponse;
-import beatriz.guesser.scholarship.dto.StudentDtoRequest;
-import beatriz.guesser.scholarship.entity.Squad;
-import beatriz.guesser.scholarship.service.InstructorService;
 import beatriz.guesser.scholarship.service.SquadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

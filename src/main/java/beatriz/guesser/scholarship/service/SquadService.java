@@ -1,9 +1,8 @@
 package beatriz.guesser.scholarship.service;
 
-import beatriz.guesser.scholarship.dto.ClassroomDtoResponse;
+
 import beatriz.guesser.scholarship.dto.SquadDtoRequest;
 import beatriz.guesser.scholarship.dto.SquadDtoResponse;
-import beatriz.guesser.scholarship.entity.Classroom;
 import beatriz.guesser.scholarship.entity.Squad;
 import beatriz.guesser.scholarship.entity.Student;
 import beatriz.guesser.scholarship.repository.SquadRepository;
@@ -11,7 +10,6 @@ import beatriz.guesser.scholarship.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
 
 @Service
 public class SquadService {
