@@ -32,12 +32,14 @@ public class Classroom {
         this.scrumMaster = scrumMaster;
         this.instructors = instructors;
     }
+
     public Classroom(Long id_class, String name_class, String status_class) {
         this.id_class = id_class;
         this.name_class = name_class;
         this.status_class = status_class;
     }
-        public Classroom(Long id_class, String name_class, String status_class, Coordinator coordinator, ScrumMaster scrumMaster, List<Instructor> instructors, List<Student> students) {
+
+    public Classroom(Long id_class, String name_class, String status_class, Coordinator coordinator, ScrumMaster scrumMaster, List<Instructor> instructors, List<Student> students) {
         this.id_class = id_class;
         this.name_class = name_class;
         this.status_class = status_class;

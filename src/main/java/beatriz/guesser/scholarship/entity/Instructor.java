@@ -15,8 +15,8 @@ public class Instructor {
     @JsonIgnore
     @ManyToMany
     @JoinTable(name = "instructor_classroom",
-    joinColumns = @JoinColumn (name = "instructor_id_instructor"),
-    inverseJoinColumns = @JoinColumn(name = "classroom_id_class"))
+            joinColumns = @JoinColumn(name = "instructor_id_instructor"),
+            inverseJoinColumns = @JoinColumn(name = "classroom_id_class"))
     private List<Classroom> classroom;
 
     public Instructor() {
@@ -50,7 +50,8 @@ public class Instructor {
     public void setClassroom(List<Classroom> classroom) {
         this.classroom = classroom;
     }
-    public void addClassroom(Classroom classroom){
+
+    public void addClassroom(Classroom classroom) {
         this.classroom.add(classroom);
     }
 }

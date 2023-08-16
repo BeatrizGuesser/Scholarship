@@ -11,7 +11,7 @@ public class ScrumMasterService {
     @Autowired
     private ScrumMasterRepository scrumMasterRepository;
 
-    public void save(ScrumMasterDtoRequest scrumMasterDtoRequest){
+    public void save(ScrumMasterDtoRequest scrumMasterDtoRequest) {
         ScrumMaster scrumMaster = new ScrumMaster(null, scrumMasterDtoRequest.getName_scrum());
         scrumMasterRepository.save(scrumMaster);
     }

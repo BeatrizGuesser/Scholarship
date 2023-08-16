@@ -18,7 +18,7 @@ public class SquadService {
     @Autowired
     private StudentRepository studentRepository;
 
-    public void save(SquadDtoRequest squadDtoRequest){
+    public void save(SquadDtoRequest squadDtoRequest) {
         Squad squad = new Squad(squadDtoRequest.getName_squad());
         squadRepository.save(squad);
     }

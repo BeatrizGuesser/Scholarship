@@ -5,7 +5,6 @@ import beatriz.guesser.scholarship.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-
 @RestController
 @RequestMapping(value = "/v1/students")
 public class StudentController {
@@ -17,5 +16,4 @@ public class StudentController {
         studentService.save(studentDtoRequest);
         return "Student successfully saved!";
     }
-
 }

@@ -22,7 +22,7 @@ public class ClassroomService {
     @Autowired
     private StudentRepository studentRepository;
 
-    public void save(ClassroomDtoRequest classroomDtoRequest){
+    public void save(ClassroomDtoRequest classroomDtoRequest) {
         Classroom classroom = new Classroom(classroomDtoRequest.getName_class());
         classroom.setStatus_class("Waiting");
         classroomRepository.save(classroom);
@@ -62,14 +62,14 @@ public class ClassroomService {
         Coordinator coordinator = coordinatorRepository.findById(id_coordinator)
                 .orElseThrow(() -> new RuntimeException("Coordinator not found with id: " + id_coordinator));
 
-            coordinator.addClassroom(classroom);
-            classroom.setCoordinator(coordinator);
-            coordinatorRepository.save(coordinator);
-            classroomRepository.save(classroom);
+        coordinator.addClassroom(classroom);
+        classroom.setCoordinator(coordinator);
+        coordinatorRepository.save(coordinator);
+        classroomRepository.save(classroom);
 
     }
 
-    public void addScrumToClass(Long id_class, Long id_scrum){
+    public void addScrumToClass(Long id_class, Long id_scrum) {
         Classroom classroom = classroomRepository.findById(id_class)
                 .orElseThrow(() -> new RuntimeException("Classroom not found with id: " + id_class));
 
@@ -82,25 +82,25 @@ public class ClassroomService {
         classroomRepository.save(classroom);
     }
 
-    public void addStudentToClass(Long id_class, Long id_student){
+    public void addStudentToClass(Long id_class, Long id_student) {
         Classroom classroom = classroomRepository.findById(id_class)
                 .orElseThrow(() -> new RuntimeException("Classroom not found with id: " + id_class));
 
         Student student = studentRepository.findById(id_student)
                 .orElseThrow(() -> new RuntimeException("Scrum Master not found with id: " + id_student));
 
-        if (classroom.getStatus_class().equalsIgnoreCase("waiting")){
+        if (classroom.getStatus_class().equalsIgnoreCase("waiting")) {
             student.setClassroom(classroom);
             classroom.setStudents(List.of(student));
             studentRepository.save(student);
 
-        }else {
+        } else {
             throw new RuntimeException("You can only register new students in the status WAITING");
         }
 
     }
 
-    public void addInstructorToClass(Long id_class, Long id_instructor){
+    public void addInstructorToClass(Long id_class, Long id_instructor) {
         Classroom classroom = classroomRepository.findById(id_class)
                 .orElseThrow(() -> new RuntimeException("Classroom not found with id: " + id_class));
 
@@ -114,22 +114,22 @@ public class ClassroomService {
 
     }
 
-    public void startClass(Long id_class){
+    public void startClass(Long id_class) {
         Classroom classroom = classroomRepository.findById(id_class).orElse(null);
-        if(classroom.getInstructors().size() == 3 && classroom.getCoordinator() != null && classroom.getScrumMaster() != null){
+        if (classroom.getInstructors().size() == 3 && classroom.getCoordinator() != null && classroom.getScrumMaster() != null) {
             classroom.setStatus_class("Started");
             classroomRepository.save(classroom);
-        }else {
+        } else {
             throw new RuntimeException("You need 1 coordinator, 1 scrum master and 3 instructors to start the class");
         }
     }
 
-    public void finishClass(Long id_class){
+    public void finishClass(Long id_class) {
         Classroom classroom = classroomRepository.findById(id_class).orElse(null);
-        if(classroom.getInstructors().size() == 3 && classroom.getCoordinator() != null && classroom.getScrumMaster() != null && classroom.getStudents().size() >= 15 && classroom.getStudents().size() <= 30){
+        if (classroom.getInstructors().size() == 3 && classroom.getCoordinator() != null && classroom.getScrumMaster() != null && classroom.getStudents().size() >= 15 && classroom.getStudents().size() <= 30) {
             classroom.setStatus_class("Finished");
             classroomRepository.save(classroom);
-        }else {
+        } else {
             throw new RuntimeException("You need 1 coordinator, 1 scrum master, 3 instructors, minimum of 15 students and a maximum of 30 to finish the class");
         }
     }

@@ -48,7 +48,7 @@ public class Coordinator {
         this.classroom = classroom;
     }
 
-    public void addClassroom(Classroom classroom){
+    public void addClassroom(Classroom classroom) {
         this.classroom.add(classroom);
     }
 

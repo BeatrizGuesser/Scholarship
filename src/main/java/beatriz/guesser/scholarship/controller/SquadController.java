@@ -17,8 +17,9 @@ public class SquadController {
         squadService.save(squadDtoRequest);
         return "Squad successfully saved!";
     }
+
     @PutMapping("/add/{id_squad}/students/{id_student}")
-    public String addStudentToSquad(@PathVariable Long id_squad, @PathVariable Long id_student){
+    public String addStudentToSquad(@PathVariable Long id_squad, @PathVariable Long id_student) {
         squadService.addStudentToSquad(id_squad, id_student);
         return "Student successfully added to squad!";
     }

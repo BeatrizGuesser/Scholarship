@@ -10,7 +10,8 @@ import org.springframework.stereotype.Service;
 public class CoordinatorService {
     @Autowired
     private CoordinatorRepository coordinatorRepository;
-    public void save(CoordinatorDtoRequest coordinatorDtoRequest){
+
+    public void save(CoordinatorDtoRequest coordinatorDtoRequest) {
         Coordinator coordinator = new Coordinator(null, coordinatorDtoRequest.getName_coordinator());
         coordinatorRepository.save(coordinator);
     }

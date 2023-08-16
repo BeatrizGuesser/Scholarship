@@ -12,7 +12,7 @@ public class StudentService {
     @Autowired
     private StudentRepository studentRepository;
 
-    public void save(StudentDtoRequest studentDtoRequest){
+    public void save(StudentDtoRequest studentDtoRequest) {
         Student student = new Student(null, studentDtoRequest.getName_student());
         studentRepository.save(student);
     }

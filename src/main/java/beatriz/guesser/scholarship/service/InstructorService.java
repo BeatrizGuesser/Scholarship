@@ -11,7 +11,7 @@ public class InstructorService {
     @Autowired
     private InstructorRepository instructorRepository;
 
-    public void save(InstructorDtoRequest instructorDtoRequest){
+    public void save(InstructorDtoRequest instructorDtoRequest) {
         Instructor instructor = new Instructor(null, instructorDtoRequest.getName_instructor());
         instructorRepository.save(instructor);
     }
