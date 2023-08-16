@@ -1,0 +1,229 @@
+{
+	"info": {
+		"_postman_id": "fd979175-86be-4267-b41d-7217f2cbc5d1",
+		"name": "Scholarship",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28387051"
+	},
+	"item": [
+		{
+			"name": "Post student",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name_student\": \"Student 2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/v1/students/post"
+			},
+			"response": []
+		},
+		{
+			"name": "Post coordinator",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name_coordinator\": \"Coordinator 2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/v1/coordinators/post"
+			},
+			"response": []
+		},
+		{
+			"name": "Post instructor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name_instructor\": \"Instructor 3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/v1/instructors/post"
+			},
+			"response": []
+		},
+		{
+			"name": "Post SrumMaster",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name_scrum\": \"Scrum Master 1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/v1/scrum-masters/post"
+			},
+			"response": []
+		},
+		{
+			"name": "Post squad",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name_squad\": \"Squad 2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/v1/squads/post"
+			},
+			"response": []
+		},
+		{
+			"name": "AddStudentToSquad",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": "http://localhost:8080/v1/squads/add/1/students/2"
+			},
+			"response": []
+		},
+		{
+			"name": "Post classroom",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name_class\": \"Class 2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/v1/classes/post"
+			},
+			"response": []
+		},
+		{
+			"name": "Get squad",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/v1/squads/get/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete squad",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/v1/squads/delete/3"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete classroom",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/v1/classes/delete/2"
+			},
+			"response": []
+		},
+		{
+			"name": "Get classroom",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/v1/classes/get/1"
+			},
+			"response": []
+		},
+		{
+			"name": "AddCoordinatorToClass",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": "http://localhost:8080/v1/classes/add/1/coordinators/1"
+			},
+			"response": []
+		},
+		{
+			"name": "AddScrumToClass",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": "http://localhost:8080/v1/classes/add/1/scrum-masters/4"
+			},
+			"response": []
+		},
+		{
+			"name": "AddInstructorToClass",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": "http://localhost:8080/v1/classes/add/1/instructors/1"
+			},
+			"response": []
+		},
+		{
+			"name": "AddStudentToClass",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": "http://localhost:8080/v1/classes/add/1/students/1"
+			},
+			"response": []
+		},
+		{
+			"name": "StartClassroom",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": "http://localhost:8080/v1/classes/start/1"
+			},
+			"response": []
+		},
+		{
+			"name": "FinishClassroom",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": "http://localhost:8080/v1/classes/finish/1"
+			},
+			"response": []
+		}
+	]
+}

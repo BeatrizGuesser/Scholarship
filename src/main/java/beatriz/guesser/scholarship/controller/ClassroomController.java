@@ -31,12 +31,6 @@ public class ClassroomController {
         return "Class successfully deleted!";
     }
 
-    @PutMapping("/update/{id_class}")
-    public String updateClassroom(@PathVariable Long id_class, @RequestBody ClassroomDtoRequest classroomDtoRequest) {
-        classroomService.save(classroomDtoRequest);
-        return "Class successfully updated!";
-    }
-
     @PutMapping("/add/{id_class}/coordinators/{id_coordinator}")
     public String addCoordinatorToClass(@PathVariable Long id_class, @PathVariable Long id_coordinator) {
         classroomService.addCoordinatorToClass(id_class, id_coordinator);
